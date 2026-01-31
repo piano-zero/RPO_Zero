@@ -37,13 +37,6 @@ Questo software fa tutto al posto tuo, tenendo traccia dello storico, gestendo l
 * ↩️ **Gestione Storni:** Funzione automatica per generare Note di Credito in caso di errori.
 * 💾 **Database Locale:** I tuoi dati restano sul tuo PC (SQLite), nessuna cloud, massima privacy.
 
-## 📸 Screenshots
-
-*(Qui puoi inserire gli screenshot della tua applicazione. Carica le immagini nella cartella del progetto o usa un servizio di hosting e linkale qui)*
-
-| Login Screen | Dashboard | Generazione PDF |
-|:---:|:---:|:---:|
-| ![Login](https://via.placeholder.com/300x200?text=Screen+Login) | ![Dashboard](https://via.placeholder.com/300x200?text=Screen+Dashboard) | ![PDF](https://via.placeholder.com/300x200?text=Esempio+PDF) |
 
 ## 🚀 Installazione
 
