@@ -89,7 +89,7 @@ I contributi sono benvenuti! Se hai idee per migliorare il codice o vuoi aggiung
 
 ## 📄 Licenza
 
-Distribuito sotto licenza **GNU General Public License v3.0**. Vedi `LICENSE` per maggiori informazioni.
+Distribuito sotto licenza **GNU General Public License v3.0**.
 
 ---
 
