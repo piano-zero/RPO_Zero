@@ -29,16 +29,17 @@ Questo software fa tutto al posto tuo, tenendo traccia dello storico, gestendo l
 
 ## ✨ Caratteristiche Principali
 
-* 👥 **Multi-Utenza (Novità v1.1):** Supporto per più profili sullo stesso PC. Ogni utente ha i suoi dati, clienti e ricevute separati e protetti da password.
+* 👥 **Multi-Utenza:** Supporto per più profili sullo stesso PC. Ogni utente ha i suoi dati, clienti e ricevute separati e protetti da password.
 * 🧮 **Calcolo Automatico:** Inserisci il lordo e il software calcola Ritenuta d'Acconto (20%), Gestione Separata INPS (sopra i 5000€), Bollo (2€ sopra i 77,47€) e Netto.
 * 📄 **Generatore PDF:** Crea ricevute e Note di Credito professionali in formato PDF (con libreria `fpdf2`), pronte da inviare via email.
 * 📊 **Dashboard Intelligente:** Visualizza a colpo d'occhio il fatturato annuo e la distanza dalla soglia "No Tax Area" INPS.
 * 🗂 **Anagrafica Completa:** Gestione Clienti (Sostituti d'imposta e Privati) e Gestione Incarichi (CIG, RUP, determine).
 * ↩️ **Gestione Storni:** Funzione automatica per generare Note di Credito in caso di errori.
-* 💾 **Database Locale:** I tuoi dati restano sul tuo PC (SQLite), nessuna cloud, massima privacy.
-
+* 💾 **Database Locale:** I tuoi dati restano sul tuo PC (SQLite), nessun cloud, massima privacy.
 
 ## 🚀 Installazione
+
+Se non vuoi usare l'exe disponibile per windows, puoi scaricare i sorgenti python.
 
 ### Prerequisiti
 * Python 3.8 o superiore installato sul sistema.
@@ -46,10 +47,6 @@ Questo software fa tutto al posto tuo, tenendo traccia dello storico, gestendo l
 ### Passaggi
 
 1.  **Clona il repository** (o scarica lo zip):
-    ```bash
-    git clone [https://github.com/TUO_USERNAME/RPO-Zero.git](https://github.com/TUO_USERNAME/RPO-Zero.git)
-    cd RPO-Zero
-    ```
 
 2.  **Installa le dipendenze:**
     Il software utilizza `fpdf2` per la generazione dei PDF.
@@ -60,17 +57,14 @@ Questo software fa tutto al posto tuo, tenendo traccia dello storico, gestendo l
 
 3.  **Avvia l'applicazione:**
     ```bash
-    python main.py
+    rpo_zero_v2.0.0.py
     ```
 
 ## 🛠 Struttura del Progetto
 
 Il progetto è modulare e facile da mantenere:
 
-* `main.py` 🧠: Il cuore dell'applicazione. Gestisce l'interfaccia grafica (GUI), la logica di login e il flusso operativo.
-* `gestore_db.py` 🗄: Gestisce tutte le operazioni sul database SQLite (creazione tabelle, query, multi-utenza).
-* `pdf_generator.py` 📄: Modulo dedicato alla creazione estetica e funzionale dei file PDF.
-* `ricevute_pdf/` 📂: Cartella creata automaticamente dove vengono salvati i file generati.
+* `rpo_zero_v2.0.0.py` 🧠: Il cuore dell'applicazione. Gestisce l'interfaccia grafica (GUI), la logica di login e il flusso operativo, le operazioni sul database SQLite (creazione tabelle, query, multi-utenza) e la creazione della cartella `ricevute_pdf/` 📂 dove vengono salvate le ricevute.
 * `gestionale_ricevute.db` 💾: Il file database (creato automaticamente al primo avvio).
 
 ## 📖 Come Usare
