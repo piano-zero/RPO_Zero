@@ -95,7 +95,7 @@ Distribuito sotto licenza **GNU General Public License v3.0**.
 
 <div align="center">
   
-  Created with ❤️ by [Rodolfo Sabelli](https://github.com/TUO_USERNAME)
+  Created with ❤️ by [pianozero](https://github.com/piano-zero)
   
   *Se questo progetto ti è stato utile, lascia una ⭐️ al repository!*
 
