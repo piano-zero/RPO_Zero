@@ -28,7 +28,7 @@ jobs:
         # --onefile: impacchetta tutto in un unico file .exe
         # --name: definisce il nome dell'eseguibile finale
         # Sostituisci "main.py" con il nome reale del tuo script se è diverso
-        pyinstaller --noconsole --onefile --name "MiaApplicazione" main.py
+        pyinstaller --noconsole --onefile --name "rpo_zero_v2.0.0" rpo_zero_v2.0.0.py
 
     - name: 5. Caricamento del file creato (Artifact)
       uses: actions/upload-artifact@v4
