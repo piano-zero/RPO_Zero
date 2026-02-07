@@ -64,8 +64,8 @@ Se non vuoi usare l'exe disponibile per windows, puoi scaricare i sorgenti pytho
 
 Il progetto è modulare e facile da mantenere:
 
-* `rpo_zero_v2.0.0.py` 🧠: Il cuore dell'applicazione. Gestisce l'interfaccia grafica (GUI), la logica di login e il flusso operativo, le operazioni sul database SQLite (creazione tabelle, query, multi-utenza) e la creazione della cartella `ricevute_pdf/` 📂 dove vengono salvate le ricevute.
-* `gestionale_ricevute.db` 💾: Il file database (creato automaticamente al primo avvio).
+* `rpo_zero_v2.0.0.py` 🧠: Il cuore dell'applicazione. Gestisce l'interfaccia grafica (GUI), la logica di login e il flusso operativo, le operazioni sul database SQLite (creazione tabelle, query, multi-utenza) e la creazione della cartella `RPO_RICEVUTE/` 📂 dove vengono salvate le ricevute.
+* `rpo_zero.db` 💾: Il file database (creato automaticamente al primo avvio).
 
 ## 📖 Come Usare
 
