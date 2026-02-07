@@ -10,6 +10,7 @@ import hashlib
 import platform
 import subprocess
 from fpdf import FPDF
+from fpdf.enums import XPos, YPos  # <--- Aggiungi questa riga
 import os
 
 # =========================================================================
@@ -711,8 +712,8 @@ def genera_pdf_ricevuta(profile, client, receipt_data, filename, is_credit_note=
     pdf.set_x(MARGIN + 90)
     pdf.cell(90, 15, "_______________________", align='C', new_x="LMARGIN", new_y="NEXT")
 
-    if not os.path.exists("ricevute_pdf"):
-        os.makedirs("ricevute_pdf")
+    if not os.path.exists("RPO_RICEVUTE"):
+        os.makedirs("RPO_RICEVUTE")
         
     pdf.output(filename)
     return filename # <--- Assicurati che ci sia questa riga!
@@ -1060,10 +1061,10 @@ class GestionaleRicevuteApp:
             
             ttk.Button(header, text="Apri", command=command).pack(pady=(0,20))
         
-        card(grid, "👥 Gestione Clienti", self.show_clients_list, 0, 0, "#2b2d42")
-        card(grid, "📁 Gestione Incarichi", self.show_assignments_list, 0, 1, "#8d99ae")
-        card(grid, "📄 Nuova Ricevuta", self.show_receipt_form, 1, 0, "#d62828")
-        card(grid, "📚 Storico Ricevute", self.show_receipts_history, 1, 1, "#f77f00")
+        card(grid, "👥 Gestione Clienti", self.show_clients_list, 0, 0, "#3D3175")
+        card(grid, "📁 Gestione Incarichi", self.show_assignments_list, 0, 1, "#AA5239")
+        card(grid, "📄 Nuova Ricevuta", self.show_receipt_form, 1, 0, "#28784D")
+        card(grid, "📚 Storico Ricevute", self.show_receipts_history, 1, 1, "#AA9439")
         
         for i in range(2): grid.columnconfigure(i, weight=1)
         for i in range(2): grid.rowconfigure(i, weight=1)
@@ -1307,10 +1308,10 @@ class GestionaleRicevuteApp:
         self.create_header_back("Nuova Ricevuta", self.show_receipts_history, None)
 
         left = ttk.Frame(self.main_frame)
-        left.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0,10))
+        left.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(10,10))
 
         right = ttk.Frame(self.main_frame)
-        right.pack(side=tk.RIGHT, fill=tk.Y, padx=(10,0))
+        right.pack(side=tk.RIGHT, fill=tk.Y, padx=(10,10))
 
         # --- FORM SINISTRO ---
         ttk.Label(left, text="Seleziona Incarico:", font=("Arial", 11, "bold")).pack(anchor="w", pady=(0,5))
@@ -1432,7 +1433,7 @@ class GestionaleRicevuteApp:
         try:
             assign_id = self.rec_assign_map[self.rec_assign.get()]
             num = db.get_next_receipt_number(self.user_id, c['anno'])
-            filename = f"ricevute_pdf/User{self.user_id}_RPO_{c['anno']}_{num}.pdf"
+            filename = f"RPO_RICEVUTE/User{self.user_id}_RPO_{c['anno']}_{num}.pdf"
             
             db.save_receipt(self.user_id, assign_id, num, c['anno'], self.rec_date.get(), self.rec_desc.get("1.0", tk.END).strip(),
                 c['lordo'], c['imp_inps'], c['aliq_inps'], c['rit_inps'], c['quota_inps'],
@@ -1537,7 +1538,7 @@ class GestionaleRicevuteApp:
                 
                 new_vals = {k: -orig_data[k] for k in ['lordo','spese','imp_irpef','quota_inps','val_bollo','netto','imp_inps','rit_inps']}
                 
-                fname = f"ricevute_pdf/User{self.user_id}_RPO_{curr_year}_{new_num}_STORNO.pdf"
+                fname = f"RPO_RICEVUTE/User{self.user_id}_RPO_{curr_year}_{new_num}_STORNO.pdf"
                 
                 db.save_receipt(self.user_id, orig_data['assign_id'], new_num, curr_year, today_str, new_desc,
                     new_vals['lordo'], new_vals['imp_inps'], orig_data['aliq_inps'], new_vals['rit_inps'], new_vals['quota_inps'],
